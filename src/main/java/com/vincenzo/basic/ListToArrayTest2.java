@@ -4,7 +4,12 @@ import java.util.List;
 
 public class ListToArrayTest2 {
 
-    public static int[][] convertListToArray(List<List<Integer>> lists) {
+    public static int[] convertListToOneDimentionalArray(List<Integer> lists) {
+        int[] result = lists.stream().mapToInt(i -> i).toArray();
+        return result;
+    }
+
+    public static int[][] convertListToTwoDimentionalArray(List<List<Integer>> lists) {
         // Stream을 사용하여 2차원 배열로 변환
         int[][] array = lists.stream()
                 .map(list -> list.stream().mapToInt(Integer::intValue).toArray()) // list의 Integer를 꺼내서 배열로 바꾼다
@@ -15,6 +20,14 @@ public class ListToArrayTest2 {
 
     public static void main(String[] args) {
 
+        List<Integer> list = List.of(1, 2, 3);
+        int[] oneDimentionalArray = convertListToOneDimentionalArray(list);
+        for(int i : oneDimentionalArray) {
+            System.out.println(i);
+        }
+        System.out.println();
+        System.out.println("==================");
+
         // 예시로 사용할 List<List<Integer>> 변수
         List<List<Integer>> lists = List.of(
                 List.of(1, 2, 3),
@@ -23,7 +36,7 @@ public class ListToArrayTest2 {
         );
 
         // 2차원 배열로 변환
-        int[][] array = convertListToArray(lists);
+        int[][] array = convertListToTwoDimentionalArray(lists);
 
         // 배열 출력
         for (int[] row : array) {
