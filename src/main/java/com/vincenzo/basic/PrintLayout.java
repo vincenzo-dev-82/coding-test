@@ -1,6 +1,5 @@
 package com.vincenzo.basic;
 
-
 import java.util.Scanner;
 
 /**
@@ -16,15 +15,15 @@ public class PrintLayout {
 
         int rows = widthSize; // 행 개수
         int cols = heightSize; // 열 개수
-        boolean[][] array = new boolean[rows][cols];
+//        boolean[][] array = new boolean[rows][cols];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
-                    array[i][j] = true;
+//                    array[i][j] = true;
                     System.out.print("T");
                 } else {
-                    array[i][j] = false;
+//                    array[i][j] = false;
                     System.out.print("f");
                 }
             }
