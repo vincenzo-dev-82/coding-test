@@ -18,6 +18,10 @@ public class ListToArrayTest2 {
         return array;
     }
 
+    public static String[] convertListToOneDimentionalStringArray(List<String> list) {
+        return list.toArray(String[]::new);
+    }
+
     public static void main(String[] args) {
 
         List<Integer> list = List.of(1, 2, 3);
@@ -45,5 +49,26 @@ public class ListToArrayTest2 {
             }
             System.out.println();
         }
+
+        List<String> names = List.of("vincenzo", "siroz", "tony");
+        String[] namesArray = convertListToOneDimentionalStringArray(names);
+        for(String name : namesArray) {
+            System.out.print(name + " ");
+        }
+        System.out.println();
+
+        List<Student> students = List.of(
+                new Student("vincenzo", 40),
+                new Student("siroz", 30),
+                new Student("tony", 20)
+        );
+
+        String[] namesOfStudents = students.stream()
+                .map(Student::getName)
+                .toArray(String[]::new);
+
+        Integer[] agesOfStudents = students.stream()
+                .map(Student::getAge)
+                .toArray(Integer[]::new);
     }
 }
