@@ -1,6 +1,4 @@
-package com.vincenzo.interview;
-
-import java.util.Arrays;
+package com.vincenzo.interview.permutation;
 
 /**
  * 문자열 두 개가 서로 순열(permutation) 관계에 있는지 확인하는 메서드를 작성하는 방법을 설명드리겠습니다.

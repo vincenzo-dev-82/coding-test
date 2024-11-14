@@ -1,4 +1,4 @@
-package com.vincenzo.interview;
+package com.vincenzo.interview.permutation;
 
 import java.util.HashMap;
 import java.util.Map;
