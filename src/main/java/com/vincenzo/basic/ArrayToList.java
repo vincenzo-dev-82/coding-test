@@ -11,7 +11,7 @@ public class ArrayToList {
         List<Integer> list = Arrays.stream(array)
                 .boxed()
                 .toList();
-        // 결과 출력
+        // 결과 출력1
         System.out.println(list);
     }
 
